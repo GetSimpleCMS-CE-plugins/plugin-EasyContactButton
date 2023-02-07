@@ -83,7 +83,6 @@
 		"lang_Popup_Title"		=>	"Popup Title",
 		"lang_Ex_Our_Info"		=>	"Our Contact Information",
 		
-		"lang_Popup_Description" =>	"Popup Description",
 		"lang_Ex_Contact_Us_247"	=>	"You can contact us 24/7 at any time",
 		
 		"lang_Phone_Description" =>	"Phone Description",
