@@ -925,7 +925,7 @@ function easy_button_settings() {
 		wa_browser_tab_Field.value 	= "<?php echo i18n_r("EasyContactButton/lang_Ex_New_Message");?>";
 		
 		ci_button_title_Field.value = "<?php echo i18n_r("EasyContactButton/lang_Ex_Contact_Us");?>";
-		ci_button_color_Field.value = "<?php echo i18n_r("EasyContactButton/lang_Ex_Color");?>";
+		ci_button_color_Field.value = "#ed2d34";
 		ci_popup_title_Field.value 	= "<?php echo i18n_r("EasyContactButton/lang_Ex_Our_Info");?>";
 		ci_popup_description_Field.value = "<?php echo i18n_r("EasyContactButton/lang_Ex_Contact_Us_247");?>";
 		ci_phone_description_Field.value = "<?php echo i18n_r("EasyContactButton/lang_Ex_Phone_Number");?>";
