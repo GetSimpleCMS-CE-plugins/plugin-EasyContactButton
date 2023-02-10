@@ -34,13 +34,15 @@
 		"lang_Ex"				=>	"ej.",
 		"lang_Ex_How_Help"		=>	"Como podemos ayudarte?",
 		
+		"lang_Hide_Mobile"		=>	"¿Ocultar en los móviles?",
+		
 		"lang_Popup_Avatar"		=>	"Avatar emergente",
 		"lang_Man"				=>	"Hombre",
 		"lang_Woman"			=>	"Mujer",
 		"lang_Icon"				=>	"Icono",
 		
 		"lang_Popup_Title"		=>	"Título emergente",
-		"lang_Ex_Need_Help"		=>	"¿Necesitas ayuda? habla con nosotros",
+		"lang_Ex_Need_Help"		=>	"¿Necesitas ayuda? Preguntanos...",
 		
 		"lang_Popup_Description" =>	"Descripción emergente",
 		"lang_Ex_Customer_Support"	=>	"Atención al cliente",

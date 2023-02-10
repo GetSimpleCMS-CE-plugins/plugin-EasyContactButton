@@ -34,6 +34,8 @@
 		"lang_Ex"				=>	"ex.",
 		"lang_Ex_How_Help"		=>	"How can we help you?",
 		
+		"lang_Hide_Mobile"		=>	"Hide on mobile phones?",
+		
 		"lang_Popup_Avatar"		=>	"Popup Avatar",
 		"lang_Man"				=>	"Man",
 		"lang_Woman"			=>	"Woman",
