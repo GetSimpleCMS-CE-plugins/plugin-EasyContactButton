@@ -14,10 +14,10 @@ i18n_merge($EasyContactButton) || i18n_merge($EasyContactButton, 'en_US');
 # register plugin
 register_plugin(
 	$EasyContactButton,								# ID of plugin, should be filename minus php
-	i18n_r($EasyContactButton.'/lang_Menu_Title'), 		# Title of plugin
-	'1.2',											# Version of plugin
+	i18n_r($EasyContactButton.'/lang_Menu_Title'), 	# Title of plugin
+	'1.3.1',										# Version of plugin
 	'islander',										# Author of plugin
-	'https://tinyurl.com/gs-islander',	# Author URL
+	'https://tinyurl.com/gs-islander',				# Author URL
 	i18n_r($EasyContactButton.'/lang_Description'), # Plugin Description
 	'plugins',										# Page type of plugin
 	'easy_button_settings'							# Function that displays content
@@ -245,11 +245,11 @@ function easy_button_js() {
 		
 		$ci_browser_tab 	= $s->ci_browser_tab;
 		
-		if (  $s->include_jquery  == 'yes'){
+		if ( $s->include_jquery  == 'yes'){
 			echo '
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>';
 		}
-		if (  $s->buttonType  == 'type_wa'){
+		if ( $s->buttonType  == 'type_wa'){
 			echo '
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data.js"></script>
@@ -297,7 +297,7 @@ function easy_button_js() {
 				';
 		}
 		
-		if (  $s->buttonType  == 'type_contact'){
+		if ( $s->buttonType  == 'type_contact'){
 			echo '
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data.js"></script>
@@ -583,7 +583,7 @@ function easy_button_settings() {
 							<hr class="style-three">
 							
 							<p>
-								<label for="wa_position"><?php echo i18n_r("EasyContactButton/lang_Button_Position");?>:</label>
+								<label for="wa_position"><img src="../plugins/EasyContactButton/assets/img/side.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Button_Position");?>:</label>
 								<select class="center-block" id="wa_position" name="wa_position">
 									<option value="right" <?php echo (@$EasyContactButton_data_setting['wa_position'] == 'right' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Right");?></option>
 									<option value="left" <?php echo (@$EasyContactButton_data_setting['wa_position'] == 'left' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Left");?></option>
@@ -591,7 +591,7 @@ function easy_button_settings() {
 							</p>
 							
 							<p>
-								<label for="wa_speechBubble"><?php echo i18n_r("EasyContactButton/lang_Mini_Bubble");?>:</label>   
+								<label for="wa_speechBubble"><img src="../plugins/EasyContactButton/assets/img/mini.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Mini_Bubble");?>:</label>   
 								<input class="center-block" type="text" id="wa_speechBubble" name="wa_speechBubble" value="<?php echo @$EasyContactButton_data_setting['wa_speechBubble']; ?>"> 
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span><?php echo i18n_r("EasyContactButton/lang_Ex_How_Help");?></span></div> 
 							</p>
@@ -605,7 +605,7 @@ function easy_button_settings() {
 							<hr class="style-three">
 							
 							<p>
-								<label for="wa_avatar"><?php echo i18n_r("EasyContactButton/lang_Popup_Avatar");?>:</label>
+								<label for="wa_avatar"><img src="../plugins/EasyContactButton/assets/img/user.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Popup_Avatar");?>:</label>
 								<select class="center-block" id="wa_avatar" name="wa_avatar">
 									<option value="male.svg" <?php echo (@$EasyContactButton_data_setting['wa_avatar'] == 'male.svg' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Man");?></option>
 									<option value="female.svg" <?php echo (@$EasyContactButton_data_setting['wa_avatar'] == 'female.svg' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Woman");?></option>
@@ -614,7 +614,7 @@ function easy_button_settings() {
 							</p>
 							
 							<p>
-								<label for="wa_popup_title"><?php echo i18n_r("EasyContactButton/lang_Popup_Title");?>:</label>   
+								<label for="wa_popup_title"><img src="../plugins/EasyContactButton/assets/img/title.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Popup_Title");?>:</label>   
 								<input class="center-block" type="text" id="wa_popup_title" name="wa_popup_title" value="<?php echo @$EasyContactButton_data_setting['wa_popup_title']; ?>">
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span><?php echo i18n_r("EasyContactButton/lang_Ex_Need_Help");?></span></div>
 							</p>
@@ -640,13 +640,13 @@ function easy_button_settings() {
 							<hr class="style-three">
 							
 							<p>
-								<label for="wa_phone"><?php echo i18n_r("EasyContactButton/lang_Phone_Number");?>:</label>   
+								<label for="wa_phone"><img src="../plugins/EasyContactButton/assets/img/phone.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Phone_Number");?>:</label>   
 								<input class="center-block" type="text" id="wa_phone" name="wa_phone" value="<?php echo @$EasyContactButton_data_setting['wa_phone']; ?>">
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Including_Country");?> <br><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span>123456789</span></div>
 							</p>
 							
 							<div class="row col-10">
-								<label for="time"><?php echo i18n_r("EasyContactButton/lang_Availability");?>:</label>
+								<label for="time"><img src="../plugins/EasyContactButton/assets/img/time.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Availability");?>:</label>
 								<div class="col-12 right">
 									<span class="smaller"><?php echo i18n_r("EasyContactButton/lang_Monday");?></span>
 									<input type="time" name="wa_mon_start" id="wa_mon_start" value="<?php echo @$EasyContactButton_data_setting['wa_mon_start']; ?>"></input>-
@@ -690,10 +690,10 @@ function easy_button_settings() {
 								</div>
 							</div>
 							
-							<div class="col-12"><hr class="style-three"></div>
+							<hr class="style-three">
 							
 							<p>
-								<label for="wa_browser_tab"><?php echo i18n_r("EasyContactButton/lang_Tab_Title");?>:</label>   
+								<label for="wa_browser_tab"><img src="../plugins/EasyContactButton/assets/img/tab.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Tab_Title");?>:</label>   
 								<input class="center-block" type="text" id="wa_browser_tab" name="wa_browser_tab" value="<?php echo @$EasyContactButton_data_setting['wa_browser_tab']; ?>">
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span><?php echo i18n_r("EasyContactButton/lang_Ex_New_Message");?></span></div>
 							</p>
@@ -711,7 +711,7 @@ function easy_button_settings() {
 							<hr class="style-three">
 							
 							<p>
-								<label for="ci_button_shape"><?php echo i18n_r("EasyContactButton/lang_Button_Shape");?>:</label>
+								<label for="ci_button_shape"><img src="../plugins/EasyContactButton/assets/img/shape.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Button_Shape");?>:</label>
 								<select class="center-block" id="ci_button_shape" name="ci_button_shape">
 									<option value="3" <?php echo (@$EasyContactButton_data_setting['ci_button_shape'] == '3' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Button_Round_Rec");?></option>
 									<option value="5" <?php echo (@$EasyContactButton_data_setting['ci_button_shape'] == '5' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Button_Rectangle");?></option>
@@ -720,7 +720,7 @@ function easy_button_settings() {
 							</p>
 							
 							<p>
-								<label for="ci_position"><?php echo i18n_r("EasyContactButton/lang_Button_Position");?>:</label>
+								<label for="ci_position"><img src="../plugins/EasyContactButton/assets/img/side.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Button_Position");?>:</label>
 								<select class="center-block" id="ci_position" name="ci_position">
 									<option value="left" <?php echo (@$EasyContactButton_data_setting['ci_position'] == 'left' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Left");?></option>
 									<option value="right" <?php echo (@$EasyContactButton_data_setting['ci_position'] == 'right' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Right");?></option>
@@ -728,19 +728,19 @@ function easy_button_settings() {
 							</p>
 							
 							<p>
-								<label for="ci_button_title"><?php echo i18n_r("EasyContactButton/lang_Button_Title");?>:</label>   
+								<label for="ci_button_title"><img src="../plugins/EasyContactButton/assets/img/title.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Button_Title");?>:</label>   
 								<input class="center-block" type="text" id="ci_button_title" name="ci_button_title" value="<?php echo @$EasyContactButton_data_setting['ci_button_title']; ?>"> 
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span><?php echo i18n_r("EasyContactButton/lang_Ex_Contact_Us");?></span></div> 
 							</p>
 							
 							<p>
-								<label for="ci_button_color"><?php echo i18n_r("EasyContactButton/lang_Button_Color");?>:</label>
+								<label for="ci_button_color"><img src="../plugins/EasyContactButton/assets/img/color.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Button_Color");?>:</label>
 								<input class="center-block" type="color" id="ci_button_color" name="ci_button_color" value="<?php echo @$EasyContactButton_data_setting['ci_button_color']; ?>">
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span>#ed2d34</span> = <span>rbg: 237 45 52</span></div>
 							</p>
 							
 							<p>
-								<label for="ci_automaticOpen"><?php echo i18n_r("EasyContactButton/lang_Automatic_Open");?>:</label>
+								<label for="ci_automaticOpen"><img src="../plugins/EasyContactButton/assets/img/auto.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Automatic_Open");?>:</label>
 								<select class="center-block" id="ci_automaticOpen" name="ci_automaticOpen">
 									<option value="true" <?php echo (@$EasyContactButton_data_setting['ci_automaticOpen'] == 'true' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_True");?></option>
 									<option value="false" <?php echo (@$EasyContactButton_data_setting['ci_automaticOpen'] == 'false' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_False");?></option>
@@ -756,7 +756,7 @@ function easy_button_settings() {
 							<hr class="style-three">
 							
 							<p>
-								<label for="ci_popup_title"><?php echo i18n_r("EasyContactButton/lang_Popup_Title");?>:</label>   
+								<label for="ci_popup_title"><img src="../plugins/EasyContactButton/assets/img/title.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Popup_Title");?>:</label>   
 								<input class="center-block" type="text" id="ci_popup_title" name="ci_popup_title" value="<?php echo @$EasyContactButton_data_setting['ci_popup_title']; ?>">
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span><?php echo i18n_r("EasyContactButton/lang_Ex_Our_Info");?></span></div>
 							</p>
@@ -769,7 +769,7 @@ function easy_button_settings() {
 							<hr class="style-three">
 							
 							<p>
-								<label for="ci_phone_description"><?php echo i18n_r("EasyContactButton/lang_Phone_Description");?>:</label>
+								<label for="ci_phone_description"><img src="../plugins/EasyContactButton/assets/img/phone.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Phone_Description");?>:</label>
 								<input class="center-block" type="text" id="ci_phone_description" name="ci_phone_description" value="<?php echo @$EasyContactButton_data_setting['ci_phone_description']; ?>">
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span><?php echo i18n_r("EasyContactButton/lang_Ex_Phone_Number");?></span></div>
 							</p>
@@ -787,7 +787,7 @@ function easy_button_settings() {
 							</p>
 							
 							<div class="row col-10">
-								<label for="time"><?php echo i18n_r("EasyContactButton/lang_Phone_Avail");?>:</label>
+								<label for="time"><img src="../plugins/EasyContactButton/assets/img/time.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Phone_Avail");?>:</label>
 								<div class="col-12 right">
 									<span class="smaller"><?php echo i18n_r("EasyContactButton/lang_Monday");?></span>
 									<input type="time" name="ci_mon_start" id="ci_mon_start" value="<?php echo @$EasyContactButton_data_setting['ci_mon_start']; ?>"></input>-
@@ -831,10 +831,10 @@ function easy_button_settings() {
 								</div>
 							</div>
 							
-							<div class="col-12"><hr class="style-three"></div>
+							<hr class="style-three">
 							
 							<p>
-								<label for="ci_email_description"><?php echo i18n_r("EasyContactButton/lang_Email_Description");?>:</label>   
+								<label for="ci_email_description"><img src="../plugins/EasyContactButton/assets/img/email.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Email_Description");?>:</label>   
 								<input class="center-block" type="text" id="ci_email_description" name="ci_email_description" value="<?php echo @$EasyContactButton_data_setting['ci_email_description']; ?>">
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span><?php echo i18n_r("EasyContactButton/lang_Ex_Email_Address");?></span></div>
 							</p>
@@ -854,7 +854,7 @@ function easy_button_settings() {
 							<hr class="style-three">
 							
 							<p>
-								<label for="ci_address_description"><?php echo i18n_r("EasyContactButton/lang_Address_Description");?>:</label>   
+								<label for="ci_address_description"><img src="../plugins/EasyContactButton/assets/img/pin.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Address_Description");?>:</label>   
 								<input class="center-block" type="text" id="ci_address_description" name="ci_address_description" value="<?php echo @$EasyContactButton_data_setting['ci_address_description']; ?>">
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span><?php echo i18n_r("EasyContactButton/lang_Ex_Office_Address");?></span></div>
 							</p>
@@ -890,7 +890,9 @@ function easy_button_settings() {
 			</div>
 		</div>
 	</form>
-	
+
+<!-- ===== Hide Sections ===== -->
+
 	<script>
 	  $(document).ready(function() {
 		// Check if a value is stored in localStorage
@@ -922,7 +924,9 @@ function easy_button_settings() {
 		});
 	  });
 	</script>
-	
+
+<!-- ===== Demo Data ===== -->
+
 	<script>
 	  const populateLink = document.getElementById("populate-link");
 	  
@@ -1039,7 +1043,9 @@ function easy_button_settings() {
 		
 	  });
 	</script>
-</div><!-- end my-plugin-->
+</div>
+
+<!-- end plugin admin -->
 
 <?php
 } 
