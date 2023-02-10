@@ -15,7 +15,7 @@ i18n_merge($EasyContactButton) || i18n_merge($EasyContactButton, 'en_US');
 register_plugin(
 	$EasyContactButton,								# ID of plugin, should be filename minus php
 	i18n_r($EasyContactButton.'/lang_Menu_Title'), 	# Title of plugin
-	'1.3.1',										# Version of plugin
+	'1.4',										# Version of plugin
 	'islander',										# Author of plugin
 	'https://tinyurl.com/gs-islander',				# Author URL
 	i18n_r($EasyContactButton.'/lang_Description'), # Plugin Description
@@ -349,7 +349,9 @@ function easy_button_js() {
 								friday: "' . $ci_fri_start . '-' . $ci_fri_end . '",
 								saturday: "' . $ci_sat_start . '-' . $ci_sat_end . '"
 							}
-						}, {
+						}, 
+						'; if (!empty($s->ci_email_description)) { echo '
+						{
 							avatar: {
 								src: \'<i class="fas fa-envelope"></i>\',
 								backgroundColor: "' . $ci_button_color . '",
@@ -368,7 +370,9 @@ function easy_button_js() {
 							onlineDay: {
 								sunday: "00:00-23:59", monday: "00:00-23:59", tuesday: "00:00-23:59", wednesday: "00:00-23:59", thursday: "00:00-23:59", friday: "00:00-23:59", saturday: "00:00-23:59"
 							}
-						}, {
+						},
+						';} if (!empty($s->ci_address_description)) { echo '
+						{
 							avatar: {
 								src: \'<i class="fas fa-map-marker-alt"></i>\',
 								backgroundColor: "' . $ci_button_color . '",
@@ -387,7 +391,9 @@ function easy_button_js() {
 							onlineDay: {
 								sunday: "00:00-23:59", monday: "00:00-23:59", tuesday: "00:00-23:59", wednesday: "00:00-23:59", thursday: "00:00-23:59", friday: "00:00-23:59", saturday: "00:00-23:59"
 							}
-						}]
+						},
+						';} echo '
+						]
 					},
 					changeBrowserTitle: !1,
 				});

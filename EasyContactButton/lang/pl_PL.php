@@ -83,7 +83,7 @@
 		"lang_Button_Rectangle"	=>	"Rectangle",
 		"lang_Button_Round_Rec"	=>	"Round-Rectangle",
 		
-		"lang_Automatic_Open"	=>	"¿Apertura automática?",
+		"lang_Automatic_Open"	=>	"Automatic Open?",
 		"lang_True"				=>	"True",
 		"lang_False"			=>	"False",
 		
