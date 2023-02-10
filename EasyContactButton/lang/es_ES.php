@@ -78,6 +78,11 @@
 		"lang_Button_Color"		=>	"Color de botón/ventana emergente",
 		"lang_Ex_Color"			=>	"#ed2d34",
 		
+		"lang_Button_Shape"		=>	"Forma de botón",
+		"lang_Button_Round"		=>	"Círculo",
+		"lang_Button_Rectangle"	=>	"Rectángulo",
+		"lang_Button_Round_Rec"	=>	"Redondo-Rectángulo",
+		
 		"lang_Automatic_Open"	=>	"¿Apertura automática?",
 		"lang_True"				=>	"Si",
 		"lang_False"			=>	"No",

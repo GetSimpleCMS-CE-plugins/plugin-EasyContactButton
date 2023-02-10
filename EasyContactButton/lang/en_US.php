@@ -78,6 +78,11 @@
 		"lang_Button_Color"		=>	"Button/Popup Color",
 		"lang_Ex_Color"			=>	"#ed2d34",
 		
+		"lang_Button_Shape"		=>	"Button shape",
+		"lang_Button_Round"		=>	"Circle",
+		"lang_Button_Rectangle"	=>	"Rectangle",
+		"lang_Button_Round_Rec"	=>	"Round-Rectangle",
+		
 		"lang_Automatic_Open"	=>	"Automatic Open?",
 		"lang_True"				=>	"True",
 		"lang_False"			=>	"False",

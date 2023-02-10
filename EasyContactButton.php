@@ -17,7 +17,7 @@ register_plugin(
 	i18n_r($EasyContactButton.'/lang_Menu_Title'), 		# Title of plugin
 	'1.2',											# Version of plugin
 	'islander',										# Author of plugin
-	'http://get-simple.info/forums/member.php?action=profile&uid=4228',	# Author URL
+	'https://tinyurl.com/gs-islander',	# Author URL
 	i18n_r($EasyContactButton.'/lang_Description'), # Plugin Description
 	'plugins',										# Page type of plugin
 	'easy_button_settings'							# Function that displays content
@@ -144,6 +144,7 @@ function easy_button_js() {
 		$ci_position 		= false;
 		$ci_button_title 	= false;
 		$ci_button_color 	= false;
+		$ci_button_shape 	= false;
 		$ci_automaticOpen 	= false;
 		$ci_hide_mobile 	= false;
 		$ci_popup_title 	= false;
@@ -211,6 +212,7 @@ function easy_button_js() {
 		$ci_position 		= $s->ci_position;
 		$ci_button_title 	= $s->ci_button_title;
 		$ci_button_color 	= $s->ci_button_color;
+		$ci_button_shape 	= $s->ci_button_shape;
 		$ci_automaticOpen 	= $s->ci_automaticOpen;
 		$ci_hide_mobile 	= $s->ci_hide_mobile;
 		$ci_popup_title 	= $s->ci_popup_title;
@@ -256,14 +258,16 @@ function easy_button_js() {
 			<script>
 				$(\'#whatsapp-us-button\').easyChatSupport({
 					button: {
-						position: "' . $wa_position . '", // left, right
+						position: "' . $wa_position . '",
 						speechBubble: "' . $wa_speechBubble . '",
 					},
 					popup: {
+						effect: 15,
 						persons: [{
 							avatar: {
 								src: \'<img src="'.$SITEURL.'plugins/EasyContactButton/assets/img/'.$wa_avatar.'" alt="">\', 
 								backgroundColor: "#ffffff",
+								onlineCircle: !0
 							},
 							text: {
 								title: "' . $wa_popup_title . '",
@@ -301,21 +305,20 @@ function easy_button_js() {
 			<script>
 				$(\'#contact-us-button\').easyChatSupport({
 					button: {
-						position: "' . $ci_position . '", // left, right
-						style: 3,
+						position: "' . $ci_position . '",
+						style: ' .$ci_button_shape. ',
 						src: \'<i class="fas fa-info-circle"></i>\',
 						backgroundColor: "' . $ci_button_color . '",
-						effect: 5,
 						notificationNumber: !1,
 						speechBubble: !1,
-						pulseEffect: !1,
+						pulseEffect: !0,
 						text: {
 							title: "' . $ci_button_title . '",
 						}
 					},
 					popup: {
-						automaticOpen: ' . $ci_automaticOpen . ', // true, false
-						effect: 8,
+						automaticOpen: ' . $ci_automaticOpen . ',
+						effect: 15,
 						header: {
 							backgroundColor: "' . $ci_button_color . '",
 							title: "' . $ci_popup_title . '",
@@ -325,16 +328,16 @@ function easy_button_js() {
 							avatar: {
 								src: \'<i class="fas fa-phone-alt"></i>\',
 								backgroundColor: "' . $ci_button_color . '",
-								onlineCircle: !1
+								onlineCircle: !0
 							},
 							text: {
-								title: "' . $ci_phone_display . '", // display-as
+								title: "' . $ci_phone_display . '",
 								description: "' . $ci_phone_description . '",
 								online: !1,
 								offline: !1
 							},
 							link: {
-								desktop: "tel:' . $ci_phone_link . '", // number-no-spaces
+								desktop: "tel:' . $ci_phone_link . '",
 								mobile: !1
 							},
 							onlineDay: {
@@ -353,7 +356,7 @@ function easy_button_js() {
 								onlineCircle: !1
 							},
 							text: {
-								title: "' . $ci_email_display . '", // display-as
+								title: "' . $ci_email_display . '",
 								description: "' . $ci_email_description . '",
 								online: !1,
 								offline: !1
@@ -447,6 +450,7 @@ function easy_button_settings() {
 		$EasyContactButton_submitted_data['ci_position'] 		= $_POST['ci_position'];
 		$EasyContactButton_submitted_data['ci_button_title'] 	= $_POST['ci_button_title'];
 		$EasyContactButton_submitted_data['ci_button_color'] 	= $_POST['ci_button_color'];
+		$EasyContactButton_submitted_data['ci_button_shape'] 	= $_POST['ci_button_shape'];
 		$EasyContactButton_submitted_data['ci_automaticOpen'] 	= $_POST['ci_automaticOpen'];
 		$EasyContactButton_submitted_data['ci_hide_mobile'] 	= $_POST['ci_hide_mobile'];
 		$EasyContactButton_submitted_data['ci_popup_title'] 	= $_POST['ci_popup_title'];
@@ -594,7 +598,7 @@ function easy_button_settings() {
 							
 							<p class="center">
 								<label for="wa_hide_mobile">
-									<input type="checkbox" id="wa_hide_mobile" name="wa_hide_mobile"  value="yes" <?php echo (@$EasyContactButton_data_setting['wa_hide_mobile'] == 'yes' ? 'checked' : ''); ?> /> <?php echo i18n_r("EasyContactButton/lang_Hide_Mobile");?>
+									<input type="checkbox" id="wa_hide_mobile" name="wa_hide_mobile"  value="true" <?php echo (@$EasyContactButton_data_setting['wa_hide_mobile'] == 'true' ? 'checked' : ''); ?> /> <?php echo i18n_r("EasyContactButton/lang_Hide_Mobile");?>
 								</label> 
 							</p>
 							
@@ -707,6 +711,15 @@ function easy_button_settings() {
 							<hr class="style-three">
 							
 							<p>
+								<label for="ci_button_shape"><?php echo i18n_r("EasyContactButton/lang_Button_Shape");?>:</label>
+								<select class="center-block" id="ci_button_shape" name="ci_button_shape">
+									<option value="3" <?php echo (@$EasyContactButton_data_setting['ci_button_shape'] == '3' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Button_Round_Rec");?></option>
+									<option value="5" <?php echo (@$EasyContactButton_data_setting['ci_button_shape'] == '5' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Button_Rectangle");?></option>
+									<option value="1" <?php echo (@$EasyContactButton_data_setting['ci_button_shape'] == '1' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Button_Round");?></option>
+								</select>
+							</p>
+							
+							<p>
 								<label for="ci_position"><?php echo i18n_r("EasyContactButton/lang_Button_Position");?>:</label>
 								<select class="center-block" id="ci_position" name="ci_position">
 									<option value="left" <?php echo (@$EasyContactButton_data_setting['ci_position'] == 'left' ? 'selected' : ''); ?>><?php echo i18n_r("EasyContactButton/lang_Left");?></option>
@@ -736,7 +749,7 @@ function easy_button_settings() {
 							
 							<p class="center">
 								<label for="ci_hide_mobile">
-									<input type="checkbox" id="ci_hide_mobile" name="ci_hide_mobile"  value="yes" <?php echo (@$EasyContactButton_data_setting['ci_hide_mobile'] == 'yes' ? 'checked' : ''); ?> /> <?php echo i18n_r("EasyContactButton/lang_Hide_Mobile");?>
+									<input type="checkbox" id="ci_hide_mobile" name="ci_hide_mobile"  value="true" <?php echo (@$EasyContactButton_data_setting['ci_hide_mobile'] == 'true' ? 'checked' : ''); ?> /> <?php echo i18n_r("EasyContactButton/lang_Hide_Mobile");?>
 								</label> 
 							</p>
 							
@@ -1070,6 +1083,7 @@ function EasyContactButton_read_settings() {
 		$EasyContactButton_data_setting['ci_position'] 		= $data->ci_position;
 		$EasyContactButton_data_setting['ci_button_title'] 	= $data->ci_button_title;
 		$EasyContactButton_data_setting['ci_button_color'] 	= $data->ci_button_color;
+		$EasyContactButton_data_setting['ci_button_shape'] 	= $data->ci_button_shape;
 		$EasyContactButton_data_setting['ci_automaticOpen'] = $data->ci_automaticOpen;
 		$EasyContactButton_data_setting['ci_hide_mobile'] 	= $data->ci_hide_mobile;
 		$EasyContactButton_data_setting['ci_popup_title'] 	= $data->ci_popup_title;
@@ -1147,6 +1161,7 @@ function EasyContactButton_save_settings($settings) {
 	$xml->addChild('ci_position', $settings['ci_position']);
 	$xml->addChild('ci_button_title', $settings['ci_button_title']);
 	$xml->addChild('ci_button_color', $settings['ci_button_color']);
+	$xml->addChild('ci_button_shape', $settings['ci_button_shape']);
 	$xml->addChild('ci_automaticOpen', $settings['ci_automaticOpen']);
 	$xml->addChild('ci_hide_mobile', $settings['ci_hide_mobile']);
 	$xml->addChild('ci_popup_title', $settings['ci_popup_title']);
