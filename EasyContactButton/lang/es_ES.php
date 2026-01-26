@@ -119,6 +119,8 @@
 		
 		"lang_Google_Link"		=>	"Enlace del mapa de Google",
 		
+		"lang_Enable_Sound"		=>	"¿Habilitar sonido (ding)?",
+		
 	# Save-Status
 		"lang_Status_Saved"		=>	"Ajustes guardados.",
 		"lang_Status_Error"		=>	"Error al guardar datos. Verifique los permisos.",

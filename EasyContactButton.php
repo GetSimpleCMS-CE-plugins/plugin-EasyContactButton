@@ -15,9 +15,9 @@ i18n_merge($EasyContactButton) || i18n_merge($EasyContactButton, 'en_US');
 register_plugin(
 	$EasyContactButton,								# ID of plugin, should be filename minus php
 	i18n_r($EasyContactButton.'/lang_Menu_Title'), 	# Title of plugin
-	'1.4',										# Version of plugin
-	'islander',										# Author of plugin
-	'https://tinyurl.com/gs-islander',				# Author URL
+	'1.5',											# Version of plugin
+	'risingisland',									# Author of plugin
+	'https://www.paypal.com/donate/?hosted_button_id=QTTWMSSQDYB82',	# Author URL
 	i18n_r($EasyContactButton.'/lang_Description'), # Plugin Description
 	'plugins',										# Page type of plugin
 	'easy_button_settings'							# Function that displays content
@@ -40,21 +40,22 @@ function easy_button_css() {
 	$s = getXML($file);
 	if (  $s->include_fa  == 'yes'){
 		echo '
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">';
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
+	';
 	}
 	
-	echo '
-		<link href="'.$SITEURL.'plugins/EasyContactButton/assets/css/easy-chat-support.min.css" rel="stylesheet">';
+	echo '	<link href="'.$SITEURL.'plugins/EasyContactButton/assets/css/easy-chat-support.min.css" rel="stylesheet">
+	';
 		
 	if (  $s->wa_hide_mobile  == 'yes'){
 		echo '
 		<style>@media(max-width: 768px){#whatsapp-us-button{display:none;}}</style>
-';
+	';
 	}
 	if (  $s->ci_hide_mobile  == 'yes'){
 		echo '
 		<style>@media(max-width: 768px){#contact-us-button{display:none;}}</style>
-';
+	';
 	}
 }
 
@@ -124,6 +125,8 @@ function easy_button_js() {
 		$wa_popup_textbox 	= false;
 		$wa_phone 			= false;
 		
+		$wa_sound 			= false;
+		
 		$wa_mon_start 		= false;
 		$wa_mon_end 		= false;
 		$wa_tue_start 		= false;
@@ -152,6 +155,8 @@ function easy_button_js() {
 		$ci_phone_description = false;
 		$ci_phone_display 	= false;
 		$ci_phone_link 		= false;
+		
+		$ci_sound 			= false;
 		
 		$ci_mon_start 		= false;
 		$ci_mon_end 		= false;
@@ -192,6 +197,8 @@ function easy_button_js() {
 		$wa_popup_textbox 	= $s->wa_popup_textbox;
 		$wa_phone 			= $s->wa_phone;
 		
+		$wa_sound 			= $s->wa_sound;
+		
 		$wa_mon_start 		= $s->wa_mon_start;
 		$wa_mon_end 		= $s->wa_mon_end;
 		$wa_tue_start 		= $s->wa_tue_start;
@@ -220,6 +227,8 @@ function easy_button_js() {
 		$ci_phone_description = $s->ci_phone_description;
 		$ci_phone_display 	= $s->ci_phone_display;
 		$ci_phone_link 		= $s->ci_phone_link;
+		
+		$ci_sound 			= $s->ci_sound;
 		
 		$ci_mon_start 		= $s->ci_mon_start;
 		$ci_mon_end 		= $s->ci_mon_end;
@@ -257,6 +266,7 @@ function easy_button_js() {
 			
 			<script>
 				$(\'#whatsapp-us-button\').easyChatSupport({
+					sound: ' . $wa_sound . ',
 					button: {
 						position: "' . $wa_position . '",
 						speechBubble: "' . $wa_speechBubble . '",
@@ -304,6 +314,7 @@ function easy_button_js() {
 			<script src="'.$SITEURL.'plugins/EasyContactButton/assets/js/easy-chat-support.min.js"></script>
 			<script>
 				$(\'#contact-us-button\').easyChatSupport({
+					sound: ' . $ci_sound . ',
 					button: {
 						position: "' . $ci_position . '",
 						style: ' .$ci_button_shape. ',
@@ -436,6 +447,8 @@ function easy_button_settings() {
 		$EasyContactButton_submitted_data['wa_popup_textbox'] 	= $_POST['wa_popup_textbox'];
 		$EasyContactButton_submitted_data['wa_phone'] 			= $_POST['wa_phone'];
 		
+		$EasyContactButton_submitted_data['wa_sound'] 			= $_POST['wa_sound'];
+		
 		$EasyContactButton_submitted_data['wa_mon_start'] 		= $_POST['wa_mon_start'];
 		$EasyContactButton_submitted_data['wa_mon_end'] 		= $_POST['wa_mon_end'];
 		$EasyContactButton_submitted_data['wa_tue_start'] 		= $_POST['wa_tue_start'];
@@ -464,6 +477,8 @@ function easy_button_settings() {
 		$EasyContactButton_submitted_data['ci_phone_description'] = $_POST['ci_phone_description'];
 		$EasyContactButton_submitted_data['ci_phone_display'] 	= $_POST['ci_phone_display'];
 		$EasyContactButton_submitted_data['ci_phone_link'] 		= $_POST['ci_phone_link'];
+		
+		$EasyContactButton_submitted_data['ci_sound'] 			= $_POST['ci_sound'];
 		
 		$EasyContactButton_submitted_data['ci_mon_start'] 		= $_POST['ci_mon_start'];
 		$EasyContactButton_submitted_data['ci_mon_end'] 		= $_POST['ci_mon_end'];
@@ -704,6 +719,13 @@ function easy_button_settings() {
 								<div class="code"><?php echo i18n_r("EasyContactButton/lang_Ex");?>: <span><?php echo i18n_r("EasyContactButton/lang_Ex_New_Message");?></span></div>
 							</p>
 							
+							<hr class="style-three">
+							
+							<p>
+								<label for="wa_sound"><img src="../plugins/EasyContactButton/assets/img/sound-on.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Enable_Sound");?></label>
+								<input type="checkbox" id="wa_sound" name="wa_sound" value="true" <?php if ( !isset($EasyContactButton_data_setting['wa_sound']) || $EasyContactButton_data_setting['wa_sound'] === 'true' ) { echo 'checked'; } ?> /> 
+							</p>
+							
 						</div>
 					</fieldset>
 				</div>
@@ -757,6 +779,13 @@ function easy_button_settings() {
 								<label for="ci_hide_mobile">
 									<input type="checkbox" id="ci_hide_mobile" name="ci_hide_mobile"  value="true" <?php echo (@$EasyContactButton_data_setting['ci_hide_mobile'] == 'true' ? 'checked' : ''); ?> /> <?php echo i18n_r("EasyContactButton/lang_Hide_Mobile");?>
 								</label> 
+							</p>
+							
+							<hr class="style-three">
+							
+							<p>
+								<label for="ci_sound"><img src="../plugins/EasyContactButton/assets/img/sound-on.png" style="vertical-align:middle;margin-left:-16px;" alt=""> <?php echo i18n_r("EasyContactButton/lang_Enable_Sound");?></label>
+								<input type="checkbox" id="ci_sound" name="ci_sound" value="true" <?php if ( !isset($EasyContactButton_data_setting['ci_sound']) || $EasyContactButton_data_setting['ci_sound'] === 'true' ) { echo 'checked'; } ?> /> 
 							</p>
 							
 							<hr class="style-three">
@@ -943,6 +972,8 @@ function easy_button_settings() {
 	  const wa_popup_textbox_Field 	= document.getElementById("wa_popup_textbox");
 	  const wa_phone_Field 			= document.getElementById("wa_phone");
 	  
+	  const wa_sound_Field 			= document.getElementById("wa_sound");
+	  
 	  const wa_mon_start_Field 	= document.getElementById("wa_mon_start");
 	  const wa_mon_end_Field 	= document.getElementById("wa_mon_end");
 	  const wa_tue_start_Field 	= document.getElementById("wa_tue_start");
@@ -967,6 +998,8 @@ function easy_button_settings() {
 	  const ci_phone_description_Field = document.getElementById("ci_phone_description");
 	  const ci_phone_display_Field 	= document.getElementById("ci_phone_display");
 	  const ci_phone_link_Field 	= document.getElementById("ci_phone_link");
+	  
+	  const ci_sound_Field 		= document.getElementById("ci_sound");
 	  
 	  const ci_mon_start_Field 	= document.getElementById("ci_mon_start");
 	  const ci_mon_end_Field 	= document.getElementById("ci_mon_end");
@@ -1075,6 +1108,8 @@ function EasyContactButton_read_settings() {
 		$EasyContactButton_data_setting['wa_popup_textbox'] = $data->wa_popup_textbox;
 		$EasyContactButton_data_setting['wa_phone'] 		= $data->wa_phone;
 		
+		$EasyContactButton_data_setting['wa_sound'] 		= isset($data->wa_sound) ? (string)$data->wa_sound : 'true';
+		
 		$EasyContactButton_data_setting['wa_mon_start'] 	= $data->wa_mon_start;
 		$EasyContactButton_data_setting['wa_mon_end'] 		= $data->wa_mon_end;
 		$EasyContactButton_data_setting['wa_tue_start'] 	= $data->wa_tue_start;
@@ -1103,6 +1138,8 @@ function EasyContactButton_read_settings() {
 		$EasyContactButton_data_setting['ci_phone_description'] = $data->ci_phone_description;
 		$EasyContactButton_data_setting['ci_phone_display'] = $data->ci_phone_display;
 		$EasyContactButton_data_setting['ci_phone_link'] 	= $data->ci_phone_link;
+		
+		$EasyContactButton_data_setting['ci_sound'] 		= isset($data->ci_sound) ? (string)$data->ci_sound : 'true';
 		
 		$EasyContactButton_data_setting['ci_mon_start'] 	= $data->ci_mon_start;
 		$EasyContactButton_data_setting['ci_mon_end'] 		= $data->ci_mon_end;
@@ -1153,6 +1190,9 @@ function EasyContactButton_save_settings($settings) {
 	$xml->addChild('wa_popup_textbox', $settings['wa_popup_textbox']);
 	$xml->addChild('wa_phone', $settings['wa_phone']);
 	
+	$settings['wa_sound'] = isset($_POST['wa_sound']) ? 'true' : 'false';
+	$xml->addChild('wa_sound', $settings['wa_sound']);
+	
 	$xml->addChild('wa_mon_start', $settings['wa_mon_start']);
 	$xml->addChild('wa_mon_end', $settings['wa_mon_end']);
 	$xml->addChild('wa_tue_start', $settings['wa_tue_start']);
@@ -1181,6 +1221,9 @@ function EasyContactButton_save_settings($settings) {
 	$xml->addChild('ci_phone_description', $settings['ci_phone_description']);
 	$xml->addChild('ci_phone_display', $settings['ci_phone_display']);
 	$xml->addChild('ci_phone_link', $settings['ci_phone_link']);
+	
+	$settings['ci_sound'] = isset($_POST['ci_sound']) ? 'true' : 'false';
+	$xml->addChild('ci_sound', $settings['ci_sound']);
 	
 	$xml->addChild('ci_mon_start', $settings['ci_mon_start']);
 	$xml->addChild('ci_mon_end', $settings['ci_mon_end']);

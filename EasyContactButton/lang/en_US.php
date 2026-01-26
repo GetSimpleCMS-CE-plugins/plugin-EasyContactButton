@@ -119,6 +119,8 @@
 		
 		"lang_Google_Link"		=>	"Google Map Link",
 		
+		"lang_Enable_Sound"		=>	"Enable Sound (ding)?",
+		
 	# Save-Status
 		"lang_Status_Saved"		=>	"Settings saved.",
 		"lang_Status_Error"		=>	"Error saving data. Check permissions.",
