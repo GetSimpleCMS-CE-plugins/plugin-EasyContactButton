@@ -1,130 +1,143 @@
 <?php
 
 	$i18n = array (
-	
+
 	# Basics
-		"lang_Menu_Title"		=>	"Easy Contact Button 🛎️",
-		
-		"lang_Page_Title"		=>	"🛎️<br>Easy Contact Button Settings",
-		"lang_Description"		=>	"Add a Contact or WhatsApp button to your theme",
-		
+		"lang_Menu_Title"		=>	"Łatwy przycisk kontaktu 🛎️",
+
+		"lang_Page_Title"		=>	"🛎️<br>Ustawienia przycisku kontaktu",
+		"lang_Description"		=>	"Dodaj przycisk kontaktu lub WhatsApp do swojego motywu",
+
 	# General
-		"lang_Include_method"	=>	"Include WhatsApp or Contact button",
-		"lang_Include_WhatsApp"	=>	"Include WhatsApp",
-		"lang_Include_Contact"	=>	"Include Contact",
-		
-		"lang_Include_Elements" =>	"Include required theme elements?",
-		"lang_Jquery"			=>	"Jquery",
-		"lang_FontAwesome"		=>	"FontAwesome",
-		
-		"lang_Manually_Add"		=>	"Manually add place-holders <b>&#60;div&#62;</b> into body of your theme?",
-		"lang_Am_Professional"	=>	"Yes, I am a professional.",
-		"lang_Or"				=>	"or",
-		
-		"lang_Populate_Data"	=>	"Populate with Example Data?",
-		
+		"lang_Include_method"	=>	"Dołącz przycisk WhatsApp lub kontaktu",
+		"lang_Include_WhatsApp"	=>	"Dołącz WhatsApp",
+		"lang_Include_Multi"	=>	"Dołącz wiele kont",
+		"lang_Include_Contact"	=>	"Dołącz kontakt",
+
+		"lang_Include_Elements" =>	"Dołączyć wymagane elementy motywu?",
+
+		"lang_Manually_Add"		=>	"Czy ręcznie dodać znaczniki zastępcze <b>&#60;div&#62;</b> do treści motywu?",
+		"lang_Am_Professional"	=>	"Tak, jestem profesjonalistą.",
+		"lang_Or"				=>	"lub",
+
+		"lang_Populate_Data"	=>	"Wypełnić przykładowymi danymi?",
+
 	# WhatsApp-Form
 		"lang_WhatsApp"			=>	"WhatsApp",
-		
-		"lang_Button_Position"	=>	"Button Position",
-		"lang_Right"			=>	"Right",
-		"lang_Left"				=>	"Left",
-		
-		"lang_Mini_Bubble"		=>	"Mini Speech Bubble",
-		"lang_Ex"				=>	"ex.",
-		"lang_Ex_How_Help"		=>	"How can we help you?",
-		
-		"lang_Hide_Mobile"		=>	"Hide on mobile phones?",
-		
-		"lang_Popup_Avatar"		=>	"Popup Avatar",
-		"lang_Man"				=>	"Man",
-		"lang_Woman"			=>	"Woman",
-		"lang_Icon"				=>	"Icon",
-		
-		"lang_Popup_Title"		=>	"Popup Title",
-		"lang_Ex_Need_Help"		=>	"Need help? Chat with us",
-		
-		"lang_Popup_Description" =>	"Popup Description",
-		"lang_Ex_Customer_Support"	=>	"Customer Support",
-		
-		"lang_Popup_Message"	=>	"Popup Message",
-		"lang_Ex_Hi_There"		=>	"Hi there &amp#128578; &lt;br&gt;How can I help you?",
-		"lang_Ex_Hi_There_Data"		=>	"Hi there &#128578; <br>How can I help you?",
-		
-		"lang_Popup_Textbox"	=>	"Popup Textbox",
-		"lang_Ex_Ask_Us"		=>	"Ask us anything!",
-		
-		"lang_Phone_Number"		=>	"Phone Number",
-		"lang_Including_Country" =>	"Including country code, No spaces.",
-		
-		"lang_Availability"		=>	"Message Availability",
-		"lang_Monday"			=>	"Monday",
-		"lang_Tuesday"			=>	"Tuesday",
-		"lang_Wednesday"		=>	"Wednesday",
-		"lang_Thursday"			=>	"Thursday",
-		"lang_Friday"			=>	"Friday",
-		"lang_Saturday"			=>	"Saturday",
-		"lang_Sunday"			=>	"Sunday",
-		
-		"lang_Tab_Title"		=>	"Browser Tab Title",
-		"lang_Ex_New_Message"	=>	"(1) New Message!",
-		
+
+		"lang_Button_Position"	=>	"Położenie przycisku",
+		"lang_Right"			=>	"Po prawej",
+		"lang_Left"				=>	"Po lewej",
+
+		"lang_Mini_Bubble"		=>	"Mały dymek z tekstem",
+		"lang_Ex"				=>	"np.",
+		"lang_Ex_How_Help"		=>	"W czym możemy pomóc?",
+
+		"lang_Notification_Number" => "Pokaż plakietkę powiadomienia (1)?",
+		"lang_Hide_Mobile"		=>	"Ukryć na telefonach komórkowych?",
+
+		"lang_Popup_Avatar"		=>	"Awatar wyskakującego okna",
+		"lang_Man"				=>	"Mężczyzna",
+		"lang_Woman"			=>	"Kobieta",
+		"lang_Icon"				=>	"Ikona",
+		"lang_Custom"			=>	"Własny",
+		"lang_Browse_Upload"	=>	"Przeglądaj / prześlij obraz",
+
+		"lang_PickImage"		=>	"Wybierz obraz",
+		"lang_BrowseUploads"	=>	"Przeglądaj przesłane pliki",
+		"lang_UploadNew"		=>	"Prześlij nowy",
+		"lang_FilterImages"		=>	"Filtruj obrazy...",
+
+		"lang_Popup_Title"		=>	"Tytuł wyskakującego okna",
+		"lang_Ex_Need_Help"		=>	"Potrzebujesz pomocy? Napisz do nas",
+
+		"lang_Popup_Description" =>	"Opis wyskakującego okna",
+		"lang_Ex_Customer_Support"	=>	"Obsługa klienta",
+
+		"lang_Popup_Message"	=>	"Wiadomość w wyskakującym oknie",
+		"lang_Ex_Hi_There"		=>	"Cześć! &amp#128578; &lt;br&gt;W czym mogę pomóc?",
+		"lang_Ex_Hi_There_Data"		=>	"Cześć! &#128578; <br>W czym mogę pomóc?",
+
+		"lang_Popup_Textbox"	=>	"Pole tekstowe wyskakującego okna",
+		"lang_Ex_Ask_Us"		=>	"O co chcesz zapytać?",
+
+		"lang_Phone_Number"		=>	"Numer telefonu",
+		"lang_Including_Country" =>	"Z kodem kraju, bez spacji.",
+
+		"lang_Availability"	=>	"Dostępność",
+		"lang_Monday"			=>	"Poniedziałek",
+		"lang_Tuesday"			=>	"Wtorek",
+		"lang_Wednesday"		=>	"Środa",
+		"lang_Thursday"			=>	"Czwartek",
+		"lang_Friday"			=>	"Piątek",
+		"lang_Saturday"			=>	"Sobota",
+		"lang_Sunday"			=>	"Niedziela",
+
+		"lang_Tab_Title"		=>	"Tytuł karty przeglądarki",
+		"lang_Ex_New_Message"	=>	"(1) Nowa wiadomość!",
+
+	# Multi-Account
+		"lang_Representatives"  =>  "Przedstawiciele konta",
+		"lang_Representative"   =>  "Przedstawiciel",
+		"lang_Add_Person"       =>  "Dodaj przedstawiciela",
+		"lang_Remove"           =>  "Usuń",
+
 	# Contact-Form
-		"lang_Contact_Info"		=>	"Contact Info",
-		
-		"lang_Button_Title"		=>	"Button Title",
-		"lang_Ex_Contact_Us"	=>	"Contact Us",
-		
-		"lang_Button_Color"		=>	"Button/Popup Color",
+		"lang_Contact_Info"		=>	"Dane kontaktowe",
+
+		"lang_Button_Title"		=>	"Tytuł przycisku",
+		"lang_Ex_Contact_Us"	=>	"Skontaktuj się z nami",
+
+		"lang_Button_Color"		=>	"Kolor przycisku / okna",
 		"lang_Ex_Color"			=>	"#ed2d34",
-		
-		"lang_Button_Shape"		=>	"Button shape",
-		"lang_Button_Round"		=>	"Circle",
-		"lang_Button_Rectangle"	=>	"Rectangle",
-		"lang_Button_Round_Rec"	=>	"Round-Rectangle",
-		
-		"lang_Automatic_Open"	=>	"Automatic Open?",
-		"lang_True"				=>	"True",
-		"lang_False"			=>	"False",
-		
-		"lang_Popup_Title"		=>	"Popup Title",
-		"lang_Ex_Our_Info"		=>	"Our Contact Information",
-		
-		"lang_Ex_Contact_Us_247"	=>	"You can contact us 24/7 at any time",
-		
-		"lang_Phone_Description" =>	"Phone Description",
-		"lang_Ex_Phone_Number"	=>	"Phone Number",
-		
-		"lang_Phone_Display"	=>	"Phone Number Display",
-		
-		"lang_Phone_Link"		=>	"Phone Number Link",
-		"lang_Ex_Include_Code" 	=>	"Including country code, no spaces.",
-		
-		"lang_Phone_Avail"		=>	"Phone Availability",
-		
-		"lang_Email_Description" =>	"Email Description",
-		"lang_Ex_Email_Address"	=>	"Email Address",
-		
-		"lang_Email_Display"	=>	"Email Display",
-		"lang_Ex_Email_Show"	=>	"Email@WebSite.com",
-		
-		"lang_Email_Link"		=>	"Email Link",
-		"lang_Ex_Email_Real"	=>	"email@website.com",
-		
-		"lang_Address_Description" =>	"Address Description",
-		"lang_Ex_Office_Address" =>	"Office Address",
-		
-		"lang_Address"			=>	"Address",
-		"lang_Ex_Address"		=>	"240 Libety Road, New York",
-		
-		"lang_Google_Link"		=>	"Google Map Link",
-		
-		"lang_Enable_Sound"		=>	"Enable Sound (ding)?",
-		
+
+		"lang_Button_Shape"		=>	"Kształt przycisku",
+		"lang_Button_Round"		=>	"Koło",
+		"lang_Button_Rectangle"	=>	"Prostokąt",
+		"lang_Button_Round_Rec"	=>	"Zaokrąglony prostokąt",
+
+		"lang_Automatic_Open"	=>	"Otwierać automatycznie?",
+		"lang_True"				=>	"Tak",
+		"lang_False"			=>	"Nie",
+
+		"lang_Popup_Title"		=>	"Tytuł wyskakującego okna",
+		"lang_Ex_Our_Info"		=>	"Nasze dane kontaktowe",
+
+		"lang_Ex_Contact_Us_247"	=>	"Możesz skontaktować się z nami o każdej porze, przez całą dobę",
+
+		"lang_Phone_Description" =>	"Opis telefonu",
+		"lang_Ex_Phone_Number"	=>	"Numer telefonu",
+
+		"lang_Phone_Display"	=>	"Wyświetlany numer telefonu",
+
+		"lang_Phone_Link"		=>	"Link do numeru telefonu",
+		"lang_Ex_Include_Code" 	=>	"Z kodem kraju, bez spacji.",
+
+		"lang_Phone_Avail"		=>	"Dostępność",
+
+		"lang_Email_Description" =>	"Opis adresu e-mail",
+		"lang_Ex_Email_Address"	=>	"Adres e-mail",
+
+		"lang_Email_Display"	=>	"Wyświetlany adres e-mail",
+		"lang_Ex_Email_Show"	=>	"Email@Strona.pl",
+
+		"lang_Email_Link"		=>	"Link do adresu e-mail",
+		"lang_Ex_Email_Real"	=>	"email@strona.pl",
+
+		"lang_Address_Description" =>	"Opis adresu",
+		"lang_Ex_Office_Address" =>	"Adres biura",
+
+		"lang_Address"			=>	"Adres",
+		"lang_Ex_Address"		=>	"ul. Wolności 240, Warszawa",
+
+		"lang_Google_Link"		=>	"Link do Map Google",
+
+		"lang_Enable_Sound"		=>	"Włączyć dźwięk (ding)?",
+
 	# Save-Status
-		"lang_Status_Saved"		=>	"Settings saved.",
-		"lang_Status_Error"		=>	"Error saving data. Check permissions.",
-		
+		"lang_Status_Saved"		=>	"Ustawienia zostały zapisane.",
+		"lang_Status_Error"		=>	"Nie udało się zapisać danych. Sprawdź uprawnienia.",
+
 	);
 
 ?>

@@ -11,11 +11,10 @@
 	# General
 		"lang_Include_method"	=>	"Incluir botón de WhatsApp o Contacto",
 		"lang_Include_WhatsApp"	=>	"Incluir WhatsApp",
+		"lang_Include_Multi"	=>	"Incluir Múltiples Cuentas",
 		"lang_Include_Contact"	=>	"Incluir Contacto",
 		
 		"lang_Include_Elements" =>	"¿Incluir los elementos del tema requeridos?",
-		"lang_Jquery"			=>	"Jquery",
-		"lang_FontAwesome"		=>	"FontAwesome",
 		
 		"lang_Manually_Add"		=>	"¿Agregar manualmente marcadores de posición <b>&#60;div&#62;</b> en el cuerpo de su tema?",
 		"lang_Am_Professional"	=>	"Sí, soy un profesional.",
@@ -34,12 +33,20 @@
 		"lang_Ex"				=>	"ej.",
 		"lang_Ex_How_Help"		=>	"Como podemos ayudarte?",
 		
+		"lang_Notification_Number" => "Mostrar indicador de notificaciones (1)?",
 		"lang_Hide_Mobile"		=>	"¿Ocultar en los móviles?",
 		
 		"lang_Popup_Avatar"		=>	"Avatar emergente",
 		"lang_Man"				=>	"Hombre",
 		"lang_Woman"			=>	"Mujer",
 		"lang_Icon"				=>	"Icono",
+		"lang_Custom"			=>	"Personalizada",
+		"lang_Browse_Upload"	=>	"Explorar / Subir imagen",
+
+		"lang_PickImage"		=>	"Seleccionar imagen",
+		"lang_BrowseUploads"	=>	"Explorar subidas",
+		"lang_UploadNew"		=>	"Subir nuevo",
+		"lang_FilterImages"		=>	"Filtrar imágenes...",
 		
 		"lang_Popup_Title"		=>	"Título emergente",
 		"lang_Ex_Need_Help"		=>	"¿Necesitas ayuda? Preguntanos...",
@@ -57,7 +64,7 @@
 		"lang_Phone_Number"		=>	"Número de teléfono",
 		"lang_Including_Country" =>	"Incluye código de país, sin espacios.",
 		
-		"lang_Availability"		=>	"Disponibilidad de mensajes",
+		"lang_Availability"		=>	"Disponibilidad",
 		"lang_Monday"			=>	"Lunes",
 		"lang_Tuesday"			=>	"Martes",
 		"lang_Wednesday"		=>	"Miércoles",
@@ -69,6 +76,12 @@
 		"lang_Tab_Title"		=>	"Título de la pestaña del navegador",
 		"lang_Ex_New_Message"	=>	"(1) ¡Nuevo mensaje!",
 		
+	# Multi-Account
+		"lang_Representatives"  =>  "Representantes de cuentas",
+		"lang_Representative"   =>  "Representante",
+		"lang_Add_Person"       =>  "Añadir representante",
+		"lang_Remove"           =>  "Eliminar",
+
 	# Contact-Form
 		"lang_Contact_Info"		=>	"Datos de contacto",
 		
@@ -100,7 +113,7 @@
 		"lang_Phone_Link"		=>	"Enlace de número de teléfono",
 		"lang_Ex_Include_Code" 	=>	"Incluye código de país, sin espacios.",
 		
-		"lang_Phone_Avail"		=>	"Disponibilidad de teléfono",
+		"lang_Phone_Avail"		=>	"Disponibilidad",
 		
 		"lang_Email_Description" =>	"Correo Descripción",
 		"lang_Ex_Email_Address"	=>	"Dirección de correo",

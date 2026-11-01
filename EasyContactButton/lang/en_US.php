@@ -11,11 +11,10 @@
 	# General
 		"lang_Include_method"	=>	"Include WhatsApp or Contact button",
 		"lang_Include_WhatsApp"	=>	"Include WhatsApp",
+		"lang_Include_Multi"	=>	"Include Multi Accounts",
 		"lang_Include_Contact"	=>	"Include Contact",
 		
 		"lang_Include_Elements" =>	"Include required theme elements?",
-		"lang_Jquery"			=>	"Jquery",
-		"lang_FontAwesome"		=>	"FontAwesome",
 		
 		"lang_Manually_Add"		=>	"Manually add place-holders <b>&#60;div&#62;</b> into body of your theme?",
 		"lang_Am_Professional"	=>	"Yes, I am a professional.",
@@ -34,12 +33,20 @@
 		"lang_Ex"				=>	"ex.",
 		"lang_Ex_How_Help"		=>	"How can we help you?",
 		
+		"lang_Notification_Number" => "Show notification badge (1)?",
 		"lang_Hide_Mobile"		=>	"Hide on mobile phones?",
 		
 		"lang_Popup_Avatar"		=>	"Popup Avatar",
 		"lang_Man"				=>	"Man",
 		"lang_Woman"			=>	"Woman",
 		"lang_Icon"				=>	"Icon",
+		"lang_Custom"			=>	"Custom",
+		"lang_Browse_Upload"	=>	"Browse / Upload Image",
+
+		"lang_PickImage"		=>	"Pick Image",
+		"lang_BrowseUploads"	=>	"Browse Uploads",
+		"lang_UploadNew"		=>	"Upload New",
+		"lang_FilterImages"		=>	"Filter images...",
 		
 		"lang_Popup_Title"		=>	"Popup Title",
 		"lang_Ex_Need_Help"		=>	"Need help? Chat with us",
@@ -57,7 +64,7 @@
 		"lang_Phone_Number"		=>	"Phone Number",
 		"lang_Including_Country" =>	"Including country code, No spaces.",
 		
-		"lang_Availability"		=>	"Message Availability",
+		"lang_Availability"		=>	"Availability",
 		"lang_Monday"			=>	"Monday",
 		"lang_Tuesday"			=>	"Tuesday",
 		"lang_Wednesday"		=>	"Wednesday",
@@ -69,6 +76,12 @@
 		"lang_Tab_Title"		=>	"Browser Tab Title",
 		"lang_Ex_New_Message"	=>	"(1) New Message!",
 		
+	# Multi-Account
+		"lang_Representatives"  =>  "Account Representatives",
+		"lang_Representative"   =>  "Representative",
+		"lang_Add_Person"       =>  "Add Representative",
+		"lang_Remove"           =>  "Remove",
+
 	# Contact-Form
 		"lang_Contact_Info"		=>	"Contact Info",
 		
@@ -100,7 +113,7 @@
 		"lang_Phone_Link"		=>	"Phone Number Link",
 		"lang_Ex_Include_Code" 	=>	"Including country code, no spaces.",
 		
-		"lang_Phone_Avail"		=>	"Phone Availability",
+		"lang_Phone_Avail"		=>	"Availability",
 		
 		"lang_Email_Description" =>	"Email Description",
 		"lang_Ex_Email_Address"	=>	"Email Address",
